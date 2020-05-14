@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ghost Kitchen</title>
+</head>
+<body>
+<div class="topnav">
+    <h1>Ghost Kitchen</h1>
+    <a href="/">Home</a>
+    <a href="/order">Order Now</a>
+    <a class="active" href="/restaurant">For Restaurants</a>
+    <a href="/user">For Customers</a>
+    <a href="/displayCart">Cart</a>
+</div>
+<div class="container">
+    <p style="padding: 25px 0px;">Welcome, restaurant interested in participating.</p>
+    <div class="flex-h">
+        <a class="button" th:href="@{/restaurant/login}">Login</a>
+        <a class="button" th:href="@{/restaurant/register}">Register</a>
+    </div>
+</div>
+</body>
+</html>

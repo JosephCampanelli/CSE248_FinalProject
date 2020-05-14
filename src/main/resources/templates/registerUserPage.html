@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ghost Kitchen</title>
+</head>
+<body>
+<div class="topnav">
+    <h1>Ghost Kitchen</h1>
+    <a href="/">Home</a>
+    <a href="/order">Order Now</a>
+    <a href="/restaurant">For Restaurants</a>
+    <a class="active" href="/user">For Customers</a>
+    <a href="/displayCart">Cart</a>
+</div>
+<div class="container">
+    <form class="flex-v" method="post" th:action="${givenAction}">
+        <div class="flex-h">
+            <label>UserName:</label>
+            <input type="text" name="uName" placeholder="Username" th:value="${givenUsername}"> <br><br>
+        </div>
+        <div class="flex-h">
+            <label>Password:</label>
+            <input type="password"name="psw" placeholder="Password" th:value="${givenPassword}"><br><br>
+        </div>
+        <div class="flex-h">
+            <label>First Name:</label>
+            <input type="text" name="fName" placeholder="First Name" th:value="${givenfName}"><br><br>
+        </div>
+        <div class="flex-h">
+            <label>Last Name:</label>
+            <input type="text" name="lName" placeholder="Last Name" th:value="${givenlName}"><br><br>
+        </div>
+        <div class="flex-h">
+            <label>Email:</label>
+            <input type="email" name="email" placeholder="Email" th:value="${givenEmail}"><br><br>
+        </div>
+        <div class="flex-h">
+            <label>Street:</label>
+            <input type="text" name="street" placeholder="Street" th:value="${givenStreet}"><br><br>
+        </div>
+        <div class="flex-h">
+            <label>City:</label>
+            <input type="text" name="city" placeholder="City" th:value="${givenCity}"><br><br>
+        </div>
+        <div class="flex-h">
+            <label>State:</label>
+            <input type="text" name="state" placeholder="State" th:value="${givenState}"><br><br>
+        </div>
+        <div class="flex-h">
+            <label>Zip:</label>
+            <input type="text" name="zip" placeholder="Zip" th:value="${givenZip}"><br><br>
+        </div>
+        <div class="flex-h">
+            <input type="submit" value="Register">
+        </div>
+    </form>
+</div>
+</body>
+</html>

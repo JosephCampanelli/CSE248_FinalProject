@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ghost Kitchen</title>
+</head>
+<body>
+<div class="topnav">
+    <h1>Ghost Kitchen</h1>
+    <a href="/">Home</a>
+    <a class="active" href="/order">Order Now</a>
+    <a href="/restaurant">For Restaurants</a>
+    <a href="/user">For Customers</a>
+    <a href="/displayCart">Cart</a>
+</div>
+<div class="container">
+    <div class="flex-v">
+        <p class="flex-h">Click on an item to add it to your cart</p>
+        <div th:each="menuItem : *{menuItems}">
+            <div class="flex-h">
+                <form method="POST" th:action="@{/addToCart/{id}(id = ${menuItem.id})}">
+                    <button style="width:300px;">
+                        <p class="buttontext" th:text="${menuItem.Name}"></p></br>
+                        <p class="buttontext" th:text="${menuItem.Description}"></p></br>
+                        <p class="buttontext" >$<span th:text="${menuItem.Price}"></span>0</p>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="flex-h">
+            <a class="button" style="width:30%;" th:href="@{/order/}">Other Restaurants</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

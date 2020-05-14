@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ghost Kitchen</title>
+</head>
+<body>
+<div class="topnav">
+    <h1>Ghost Kitchen</h1>
+    <a href="/">Home</a>
+    <a href="/order">Order Now</a>
+    <a href="/restaurant">For Restaurants</a>
+    <a class="active" href="/user">For Customers</a>
+    <a href="/displayCart">Cart</a>
+</div>
+<div class="container">
+    <div class="flex-h">
+        <p>Welcome, <span th:text="${user.fName + ' ' + user.lName}"></span></p>
+    </div>
+    <div class="flex-h">
+        <a class="button" th:href="@{/user/{id}/edit(id = ${user.id})}">edit</a>
+        <a class="button" th:href="@{/user/{id}/delete(id = ${user.id})}">delete</a>
+    </div>
+</body>
+</html>
